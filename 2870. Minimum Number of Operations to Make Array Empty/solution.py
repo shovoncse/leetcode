@@ -1,3 +1,10 @@
 class Solution:
     def minOperations(self, nums: List[int]) -> int:
-        # will solve later
+        count = Counter(nums) # count[n] => c
+        res = 0
+        for n, c in count.items():
+          if c == 1:
+            return -1
+          res += math.ceil(c/3)
+        
+        return res
